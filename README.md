@@ -5,13 +5,18 @@ simple way to use fetch and also handle error
 In this module fetch method has been simpliefied for use. One can handle error and also result of fetch with simple callback thus it speed up the developement.
 
 ```js
-import {fetchSimple} from "fetch-simple"
-
-fetchSimple(route, oprions, function(err, data){
-  if(err){
-    return err
-  }else{
-  return data
+const fetchSimple = require("fetch-simple").fetchSimple;
+let route = "https://jsonplaceholder.typicode.com/posts"
+let options ={
+    method : "GET"
+}
+let result = fetchSimple(route, options, (err, data)=>{
+    if(err){
+        console.log(err)
+    }else{
+        console.log(data)
+    }
 })
+//use browserify to club files
 
 ```
