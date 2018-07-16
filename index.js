@@ -1,4 +1,5 @@
-export default  fetchSimple = (route, options, callback)=>{
+exports.fetchSimple = (route, options, callback)=>{
+    
     fetch(route, options).then((result)=>{
         if(result.ok){
             return result.json()
